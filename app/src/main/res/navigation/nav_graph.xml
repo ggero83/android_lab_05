@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/QuizStartFragment">
+
+    <fragment
+        android:id="@+id/QuizStartFragment"
+        android:name="com.example.labor5.QuizStartFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_QuizStart_to_Question"
+            app:destination="@id/QuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QuestionFragment"
+        android:name="com.example.labor5.QuestionFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_Question_to_Question"
+            app:destination="@id/QuestionFragment" />
+
+        <action
+            android:id="@+id/action_Question_to_QuizEnd"
+            app:destination="@id/QuizEndFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/QuizEndFragment"
+        android:name="com.example.labor5.QuizEndFragment"
+        android:label="Quiz end"
+        tools:layout="@layout/fragment_quiz_end">
+
+        <action
+            android:id="@+id/action_QuizEnd_to_QuizStart"
+            app:destination="@id/QuizStartFragment" />
+    </fragment>
+
+</navigation>
